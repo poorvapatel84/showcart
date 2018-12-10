@@ -7,7 +7,7 @@ header("Location: " . $config_basedir);
 
 if(isset($_POST['submit']))
 {
-$loginsql = "SELECT * FROM logins WHERE username = '" . $_POST['userBox']. "' AND password = '" . sha1($_POST['passBox']) . "'";
+$loginsql = "SELECT * FROM logins WHERE username = '" . $_POST['userBox']. "' AND password = '" .($_POST['passBox']) . "'";
 $loginres = mysqli_query($conn,$loginsql);
 $numrows = mysqli_num_rows($loginres);
 if($numrows == 1)
